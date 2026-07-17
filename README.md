@@ -29,10 +29,15 @@ Generated Response
 ## Features
 
 Modular project structure with clear separation of frontend, backend, AI service, and routing.
+
 End-to-end pipeline connecting the frontend, FastAPI backend, and LLM.
+
 Reusable prompt templates using LangChain.
+
 FAQ-grounded responses to reduce hallucinations.
+
 Supports both CLI and web interface.
+
 Easily extendable to larger knowledge bases or RAG pipelines.
 
 ## Tech Stack
@@ -108,32 +113,87 @@ using Live Server or the VS Code Integrated Browser.
 
 ## Examples
 
-Query What is refund policy ?
-Assistant : Products can be returned within 7 days of delivery if they are unused and in their original packaging.
+### 1. Refund Policy
+
+**User**
+
+```text
+What is the refund policy?
+```
+
+**Assistant**
+
+```text
+Products can be returned within 7 days of delivery if they are unused and in their original packaging.
 
 Refunds are processed after inspection:
-*   **UPI:** 2–3 days
-*   **Card:** 5–7 days
+- UPI: 2–3 days
+- Card: 5–7 days
+```
 
-Query  How can I contact customer support ?
-Assistant : You can contact our customer support team via:
+---
 
-*   **Email:** support@shopzone.com
-*   **Phone:** +91-1800-555-1234
+### 2. Contact Customer Support
 
-Query When can I contact support ?
-Assistant : Our customer support team is available Monday to Saturday from 9:00 AM to 8:00 PM IST.
+**User**
 
-Query I want to order
-Assistant : I understand you want to place an order. The FAQs do not provide specific instructions on how to order.
+```text
+How can I contact customer support?
+```
 
-Please contact our customer support team for assistance with placing an order:
+**Assistant**
+
+```text
+You can contact our customer support team via:
 
 Email: support@shopzone.com
 Phone: +91-1800-555-1234
+```
+
+---
+
+### 3. Support Hours
+
+**User**
+
+```text
+When can I contact support?
+```
+
+**Assistant**
+
+```text
+Our customer support team is available
+Monday to Saturday from 9:00 AM to 8:00 PM IST.
+```
+
+---
+
+### 4. Out-of-Scope Query
+
+**User**
+
+```text
+I want to order
+```
+
+**Assistant**
+
+```text
+I understand you want to place an order.
+
+The FAQs do not provide specific instructions on how to order.
+
+Please contact our customer support team for assistance:
+
+Email: support@shopzone.com
+Phone: +91-1800-555-1234
+```
 
 ## Limitations
 
 Uses the complete FAQ file as prompt context.
+
 Best suited for small to medium-sized FAQ datasets.
+
 Future enhancement: semantic retrieval (RAG) for large knowledge bases.
